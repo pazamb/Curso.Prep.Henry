@@ -243,7 +243,7 @@ function doWhile(numero) {
   //Usar el bucle do ... while.
   var suma = 0;
   do {
-    suma = numero + 5;
+    suma = numero + 55;
   }
   while (numero < ((numero * 8) + 30));
   return suma;
