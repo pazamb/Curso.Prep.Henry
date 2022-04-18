@@ -66,12 +66,16 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-  var res = str.split(' ');
-  var newRes = '';
-  for (var i = 0 ; i < res.length ; i++) {    
+  //var res = str.split(' ');
+  //var newRes = '';
+  /*for (var i = 0 ; i < res.length ; i++) {    
     newRes = newRes + ' ' + res[i].split('').reverse().join('');
   }
-  return newRes.slice(1);
+  return newRes.slice(1);*/
+  var asd = str.split(' ').map(function(x) {
+    return x.split('').reverse().join('');
+  });
+  return asd.join(' ');
   
 } 
 
@@ -81,6 +85,10 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  if (numero.toString() === numero.toString().split('').reverse().join('')) {
+    return 'Es capicua';
+  }
+  return 'No es capicua';
 }
 
 
@@ -88,6 +96,14 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  var spl = cadena.split('');
+  var nuevoA = '';
+  for (var i = 0 ; i < spl.length ; i++) {
+    if ((spl[i] !== 'a') && (spl[i] !== 'b') && (spl[i] !== 'c')) {
+      nuevoA = nuevoA + spl[i];
+    }
+  }
+  return nuevoA;
 }
 
 
@@ -95,6 +111,12 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+ 
+  arr.sort( function (a,b) {
+      return a - b;
+    });
+    return arr;
+
 }
 
 
@@ -104,6 +126,15 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
+  var ress = [];
+  for (var i = 0 ; i < arreglo1.length ; i++) {
+    for (var j = 0 ; j < arreglo2.length ; j++) {
+      if (arreglo1[i] === arreglo2[j]) {
+        ress.push(arreglo1[i])
+      }
+    }
+  }
+  return ress;
 }
 
 
