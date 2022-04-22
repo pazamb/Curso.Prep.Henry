@@ -57,13 +57,8 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-  var res = [];
-  str.split(' ').forEach( function(x) {
-    for (var i = x.length - 1 ; i >= 0 ; i--) {
-      res.push(x[i]);
-    }
-  });
-  return res.join('');
+  var asd = str.split(' ').map(x => x.split('').reverse().join(''));
+  return asd.join(' ');
 }
 
 function capicua(numero){
@@ -71,7 +66,11 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
- 
+  var asd = numero.toString().split('').reverse().join('');
+  if (numero.toString() === asd) {
+    return 'Es capicua';
+  }
+  return 'No es capicua';
 }
 
 
@@ -79,7 +78,15 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
- 
+  var asd = cadena.split('');
+  var sdf = '';
+  for (var i = 0 ; i < asd.length ; i++) {
+    if ((asd[i] !== 'a') && (asd[i] !== 'b') && (asd[i] !== 'c')) {
+      sdf += asd[i];
+    }
+
+  }
+  return sdf;
 }
 
 
@@ -87,7 +94,10 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
- 
+  var asd = arr.sort(function(a,b){
+    return a.length - b.length;
+  });
+  return asd;
 
 
 }
@@ -99,7 +109,15 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
-
+  var newArr = []; 
+  for (var i = 0 ; i < arreglo1.length ; i++) {
+    for (var j = 0 ; j < arreglo2.length ; j++) {
+      if (arreglo1[i] === arreglo2[j]) {
+        newArr.push(arreglo1[i]);
+      }
+    }
+  }
+  return newArr;
 }
 
 
