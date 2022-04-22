@@ -57,8 +57,7 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-  var asd = str.split(' ').map(x => x.split('').reverse().join(''));
-  return asd.join(' ');
+
 }
 
 function capicua(numero){
